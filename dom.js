@@ -99,3 +99,44 @@ function addNavItem(text, href) {
 
 addNavItem("Blog", "/blog");
 addNavItem("Portfolio", "/portfolio");
+// ==========================================
+// LESSON 10 - TASK 10.1: Event Listeners
+// ==========================================
+
+// Create a Click Counter UI dynamically
+const counterContainer = document.createElement("div");
+counterContainer.style.margin = "20px 0";
+counterContainer.innerHTML = `
+    <h3>Click Counter</h3>
+    <span id="count-display" style="font-size: 24px; font-weight: bold;">0</span>
+    <div style="margin-top: 10px;">
+        <button id="decrease-btn">-</button>
+        <button id="increase-btn">+</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+`;
+document.body.appendChild(counterContainer);
+
+let count = 0;
+const countDisplay = document.getElementById("count-display");
+const increaseBtn = document.getElementById("increase-btn");
+const decreaseBtn = document.getElementById("decrease-btn");
+const resetBtn = document.getElementById("reset-btn");
+
+increaseBtn.addEventListener("click", () => {
+    count++;
+    countDisplay.textContent = count;
+});
+
+decreaseBtn.addEventListener("click", () => {
+    if (count > 0) {
+        count-—; // wait, make sure it doesn't go below 0 as required
+        countDisplay.textContent = count;
+    }
+});
+
+resetBtn.addEventListener("click", () => {
+    count = 0;
+    countDisplay.textContent = count;
+});
+
