@@ -1,6 +1,4 @@
-// ==========================================
-// TASK 9.1: Selecting Elements
-// ==========================================
+
 const header = document.getElementById("main-header");
 console.log("getElementById:", header);
 
@@ -16,7 +14,7 @@ console.log("querySelector:", firstLink);
 const allLinks = document.querySelectorAll(".nav-link");
 console.log("querySelectorAll:", allLinks);
 
-// Additional 9.1 Selectors
+
 const mainHeading = document.querySelector("h1");
 const contactForm = document.getElementById("contact-form");
 const emailInput = document.getElementById("email");
@@ -24,48 +22,40 @@ const navListItems = document.querySelectorAll("nav li");
 const lastParagraph = document.querySelectorAll("p")[document.querySelectorAll("p").length - 1];
 
 
-// ==========================================
-// TASK 9.2: Traversing the DOM
-// ==========================================
+
 const nav = document.querySelector("nav");
-console.log("Parent:", nav.parentElement);          // header
-console.log("Children:", nav.children);               // HTMLCollection
-console.log("First Child:", nav.firstElementChild);      // ul
-console.log("Last Child:", nav.lastElementChild);       // ul
+console.log("Parent:", nav.parentElement);         
+console.log("Children:", nav.children);               
+console.log("First Child:", nav.firstElementChild);      
+console.log("Last Child:", nav.lastElementChild);       
 
 const article = document.querySelector("article");
-console.log("Next Sibling:", article.nextElementSibling);     // section
-console.log("Prev Sibling:", article.previousElementSibling); // null
+console.log("Next Sibling:", article.nextElementSibling);     
+console.log("Prev Sibling:", article.previousElementSibling); 
 
-const navLinks = nav.querySelectorAll("a");  // all links inside nav
-
-
-// ==========================================
-// TASK 9.3: Modifying Content & Styles
-// ==========================================
+const navLinks = nav.querySelectorAll("a");  
 const h1 = document.querySelector("h1");
 console.log("textContent:", h1.textContent);     
 console.log("innerText:", h1.innerText);       
 h1.textContent = "DOM Manipulation Mastery";
 
-// HTML Content
+
 console.log("Original innerHTML:", article.innerHTML);
 article.innerHTML = `
     <h2>Updated Article</h2>
     <p>This is new content injected via JavaScript.</p>
 `;
 
-// Attributes
+
 const link = document.querySelector(".nav-link");
 console.log("href attribute:", link.getAttribute("href"));
 link.setAttribute("href", "https://developer.mozilla.org");
 
-// Data attributes
 const container = document.querySelector(".container");
 container.dataset.sectionId = "week-05-practice";
 console.log("Dataset ID:", container.dataset.sectionId);
 
-// Styles
+
 Object.assign(container.style, {
     backgroundColor: "#1e1e1e",
     color: "#f8f9fa",
@@ -73,17 +63,13 @@ Object.assign(container.style, {
     borderRadius: "8px"
 });
 
-
-// ==========================================
-// TASK 9.4: Adding & Removing Elements
-// ==========================================
 const newParagraph = document.createElement("p");
 newParagraph.textContent = "This is a new paragraph added dynamically!";
 newParagraph.className = "content highlight";
 
-article.appendChild(newParagraph);  // Add at end
+article.appendChild(newParagraph);  
 
-// Dynamic Nav Item Builder function
+
 const navList = document.querySelector(".nav-list");
 
 function addNavItem(text, href) {
@@ -99,11 +85,8 @@ function addNavItem(text, href) {
 
 addNavItem("Blog", "/blog");
 addNavItem("Portfolio", "/portfolio");
-// ==========================================
-// LESSON 10 - TASK 10.1: Event Listeners
-// ==========================================
 
-// Create a Click Counter UI dynamically
+
 const counterContainer = document.createElement("div");
 counterContainer.style.margin = "20px 0";
 counterContainer.innerHTML = `
@@ -130,19 +113,14 @@ increaseBtn.addEventListener("click", () => {
 
 decreaseBtn.addEventListener("click", () => {
     if (count > 0) {
-        count-—; // wait, make sure it doesn't go below 0 as required
+        count-—; 
         countDisplay.textContent = count;
     }
 });
 
 resetBtn.addEventListener("click", () => {
     count = 0;
-    countDisplay.textContent = count;
-});
-
-// ==========================================
-// LESSON 10 - TASK 10.2: The Event Object
-// ==========================================
+    countDisplay.textContent 
 
 document.addEventListener("keydown", function(event) {
     // Ctrl + S: Prevent actual save dialog and show alert
@@ -151,14 +129,14 @@ document.addEventListener("keydown", function(event) {
         alert("Shortcut Saved! (Default save dialog blocked)");
     }
     
-    // Escape: Clear all form inputs on the page
+    
     if (event.key === "Escape") {
         const inputs = document.querySelectorAll("input");
         inputs.forEach(input => input.value = "");
         console.log("Inputs cleared via Escape key.");
     }
     
-    // Ctrl + Enter: Trigger form submission if form exists
+    
     if (event.ctrlKey && event.key === "Enter") {
         const form = document.getElementById("contact-form");
         if (form) {
