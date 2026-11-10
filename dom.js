@@ -140,3 +140,31 @@ resetBtn.addEventListener("click", () => {
     countDisplay.textContent = count;
 });
 
+// ==========================================
+// LESSON 10 - TASK 10.2: The Event Object
+// ==========================================
+
+document.addEventListener("keydown", function(event) {
+    // Ctrl + S: Prevent actual save dialog and show alert
+    if (event.ctrlKey && event.key.toLowerCase() === "s") {
+        event.preventDefault();
+        alert("Shortcut Saved! (Default save dialog blocked)");
+    }
+    
+    // Escape: Clear all form inputs on the page
+    if (event.key === "Escape") {
+        const inputs = document.querySelectorAll("input");
+        inputs.forEach(input => input.value = "");
+        console.log("Inputs cleared via Escape key.");
+    }
+    
+    // Ctrl + Enter: Trigger form submission if form exists
+    if (event.ctrlKey && event.key === "Enter") {
+        const form = document.getElementById("contact-form");
+        if (form) {
+            console.log("Form submitted via Ctrl+Enter shortcut.");
+        }
+    }
+});
+
+
