@@ -56,4 +56,4 @@ Managing cross-device coding and testing through the mobile browser-based GitHub
 
 ## Live Demo (if deployed)
 <!-- Add your deployed project URL here -->
-[View Live Demo](https://your-deployed-url.com)
+[View Live Demo](https://calvinmutungi.github.io/iyf-s12-week-05-CalvinMutungi/)
