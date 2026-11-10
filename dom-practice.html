@@ -1,1 +1,23 @@
+// Task 9.1 Practice: Selecting Elements
+const mainHeading = document.querySelector("h1");
+console.log("1. H1 Element:", mainHeading);
+
+const contentElements = document.getElementsByClassName("content");
+console.log("2. Content Elements:", contentElements);
+
+const contactForm = document.getElementById("contact-form");
+console.log("3. Contact Form:", contactForm);
+
+const emailInput = document.querySelector("#email");
+console.log("4. Email Input:", emailInput);
+
+const navListItems = document.querySelectorAll("nav li");
+console.log("5. Nav List Items:", navListItems);
+
+const firstNavLink = document.querySelector(".nav-link");
+console.log("6. First Nav Link:", firstNavLink);
+
+const allParagraphs = document.querySelectorAll("p");
+const lastParagraph = allParagraphs[allParagraphs.length - 1];
+console.log("7. Last Paragraph:", lastParagraph);
 
