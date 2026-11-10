@@ -1,6 +1,4 @@
-// ==========================================
-// IYF WEEK 5: TO-DO LIST APPLICATION (`app.js`)
-// ==========================================
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const todoInput = document.getElementById("todo-input");
@@ -8,20 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const todoList = document.getElementById("todo-list");
     const filterBtns = document.querySelectorAll(".filter-btn");
 
-    // Load tasks from localStorage or initialize empty array
+     empty array
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     let currentFilter = "all";
 
-    // Render tasks on initial load
+    
     renderTasks();
 
-    // Add Task Event Listeners
+
     addBtn.addEventListener("click", addTask);
     todoInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") addTask();
     });
 
-    // Filter Buttons Event Listeners
+    
     filterBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             filterBtns.forEach(b => b.classList.remove("active"));
@@ -31,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Event Delegation for Complete and Delete actions on the UL
+    
     todoList.addEventListener("click", (e) => {
         const item = e.target.closest(".todo-item");
         if (!item) return;
@@ -106,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Basic XSS protection utility
+
     function escapeHTML(str) {
         return str.replace(/[&<>'"]/g, 
             tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
